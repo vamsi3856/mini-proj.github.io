@@ -53,6 +53,14 @@ $error="Something went wrong. Please try again";
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
+
+            .vamsi{
+    background: -moz-linear-gradient(-45deg, #632c65 15%, #56a5e2 100%);
+background: -webkit-linear-gradient(-45deg, #632c65 15%,#56a5e2 100%);
+background: linear-gradient(135deg, #632c65 15%,#56a5e2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#632c65', endColorstr='#56a5e2',GradientType=1 );
+}
+            
 .succWrap{
     padding: 10px;
     margin: 0 0 20px 0;
@@ -76,12 +84,13 @@ $error="Something went wrong. Please try again";
 <!-- ========== LEFT SIDEBAR ========== -->
 <?php include('includes/leftbar.php');?>                   
  <!-- /.left-sidebar -->
-
+                
                     <div class="main-page">
+                    <div class="vamsi">
                         <div class="container-fluid">
                             <div class="row page-title-div">
                                 <div class="col-md-6">
-                                    <h2 class="title">Create Student Class</h2>
+                                    <h2 class="title color-black">Create Student Class</h2>
                                 </div>
                                 
                             </div>
@@ -128,25 +137,26 @@ else if($error){?>
                                             <div class="panel-body">
 
                                                 <form method="post">
-                                                    <div class="form-group has-success">
-                                                        <label for="success" class="control-label">Class Name</label>
-                                                		<div class="">
-                                                			<input type="text" name="classname" class="form-control" required="required" id="success">
-                                                            <span class="help-block">Eg- Third, Fouth,Sixth etc</span>
-                                                		</div>
-                                                	</div>
-                                                       <div class="form-group has-success">
-                                                        <label for="success" class="control-label">Class Name in Numeric</label>
+                                                <div class="form-group has-success">
+                                                        <label for="success" class="control-label">Year</label>
                                                         <div class="">
                                                             <input type="number" name="classnamenumeric" required="required" class="form-control" id="success">
-                                                            <span class="help-block">Eg- 1,2,4,5 etc</span>
+                                                           
                                                         </div>
+                                                    <div class="form-group has-success">
+                                                        <label for="success" class="control-label">Branch</label>
+                                                		<div class="">
+                                                			<input type="text" name="classname" class="form-control" required="required" id="success">
+                        
+                                                		</div>
+                                                	</div>
+                                                       
                                                     </div>
                                                      <div class="form-group has-success">
                                                         <label for="success" class="control-label">Section</label>
                                                         <div class="">
                                                             <input type="text" name="section" class="form-control" required="required" id="success">
-                                                            <span class="help-block">Eg- A,B,C etc</span>
+                                                          
                                                         </div>
                                                     </div>
   <div class="form-group has-success">
@@ -177,7 +187,7 @@ else if($error){?>
 
                     </div>
                     <!-- /.main-page -->
-
+</div>
                 </div>
                 <!-- /.content-container -->
             </div>

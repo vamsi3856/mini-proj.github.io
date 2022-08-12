@@ -15,7 +15,7 @@ if(strlen($_SESSION['alogin'])=="")
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SRMS System | Dashboard</title>
+        <title>Dashboard</title>
         <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" >
         <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" >
         <link rel="stylesheet" href="css/animate-css/animate.min.css" media="screen" >
@@ -25,7 +25,18 @@ if(strlen($_SESSION['alogin'])=="")
         <link rel="stylesheet" href="css/icheck/skins/line/red.css" >
         <link rel="stylesheet" href="css/icheck/skins/line/green.css" >
         <link rel="stylesheet" href="css/main.css" media="screen" >
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" >
         <script src="js/modernizr/modernizr.min.js"></script>
+
+        <style>
+            body,bg{
+                background: -moz-linear-gradient(-45deg, #632c65 15%, #56a5e2 100%);
+background: -webkit-linear-gradient(-45deg, #632c65 15%,#56a5e2 100%);
+background: linear-gradient(135deg, #632c65 15%,#56a5e2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#632c65', endColorstr='#56a5e2',GradientType=1 );
+            }
+
+            </style>
     </head>
     <body class="top-navbar-fixed">
         <div class="main-wrapper">
@@ -53,6 +64,7 @@ if(strlen($_SESSION['alogin'])=="")
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div data-aos="fade-down" data-aos-duration="1000">
                                         <a class="dashboard-stat bg-primary" href="manage-students.php">
 <?php
 $sql1 ="SELECT StudentId from tblstudents ";
@@ -66,11 +78,13 @@ $totalstudents=$query1->rowCount();
                                             <span class="name">Regd Users</span>
                                             <span class="bg-icon"><i class="fa fa-users"></i></span>
                                         </a>
+    </div>
                                         <!-- /.dashboard-stat -->
                                     </div>
                                     <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div data-aos="fade-down" data-aos-duration="1000">
                                         <a class="dashboard-stat bg-danger" href="manage-subjects.php">
 <?php
 $sql ="SELECT id from  tblsubjects ";
@@ -83,11 +97,13 @@ $totalsubjects=$query->rowCount();
                                             <span class="name">Subjects Listed</span>
                                             <span class="bg-icon"><i class="fa fa-ticket"></i></span>
                                         </a>
+    </div>
                                         <!-- /.dashboard-stat -->
                                     </div>
                                     <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div data-aos="fade-down" data-aos-duration="1000">
                                         <a class="dashboard-stat bg-warning" href="manage-classes.php">
                                         <?php
 $sql2 ="SELECT id from  tblclasses ";
@@ -100,11 +116,13 @@ $totalclasses=$query2->rowCount();
                                             <span class="name">Total classes listed</span>
                                             <span class="bg-icon"><i class="fa fa-bank"></i></span>
                                         </a>
+    </div>
                                         <!-- /.dashboard-stat -->
                                     </div>
                                     <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div data-aos="fade-down" data-aos-duration="1000">
                                         <a class="dashboard-stat bg-success" href="manage-results.php">
                                         <?php
 $sql3="SELECT  distinct StudentId from  tblresult ";
@@ -118,6 +136,7 @@ $totalresults=$query3->rowCount();
                                             <span class="name">Results Declared</span>
                                             <span class="bg-icon"><i class="fa fa-file-text"></i></span>
                                         </a>
+    </div>
                                         <!-- /.dashboard-stat -->
                                     </div>
                                     <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
@@ -197,6 +216,13 @@ $totalresults=$query3->rowCount();
 
             });
         </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+       AOS.init();
+     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     </body>
 
     <div class="foot"><footer>

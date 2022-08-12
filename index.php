@@ -1,187 +1,96 @@
-<?php
-session_start();
-error_reporting(0);
-include('includes/config.php');
-if($_SESSION['alogin']!=''){
-$_SESSION['alogin']='';
-}
-if(isset($_POST['login']))
-{
-$uname=$_POST['username'];
-$password=md5($_POST['password']);
-$sql ="SELECT UserName,Password FROM admin WHERE UserName=:uname and Password=:password";
-$query= $dbh -> prepare($sql);
-$query-> bindParam(':uname', $uname, PDO::PARAM_STR);
-$query-> bindParam(':password', $password, PDO::PARAM_STR);
-$query-> execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-$_SESSION['alogin']=$_POST['username'];
-echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-} else{
 
-    echo "<script>alert('Invalid Details');</script>";
-
-}
-
-}
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Student Result Management System</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" >
-        <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" >
-        <link rel="stylesheet" href="css/animate-css/animate.min.css" media="screen" >
-        <link rel="stylesheet" href="css/prism/prism.css" media="screen" > <!-- USED FOR DEMO HELP - YOU CAN REMOVE IT -->
-        <link rel="stylesheet" href="css/main.css" media="screen" >
-        <script src="js/modernizr/modernizr.min.js"></script>
+        <title>🎓🅡🅜🅢</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            body{
+        
+                background:url(rs.jpg);
+                background-size: cover;
+            overflow-x: hidden; 
+            overflow-y:hidden;
+            height:100vh;
+            width:100vw;
+            display:flex;  
+            
+            
+            }
+            .centered {
+  position: absolute;
+  top: 75%;
+  left: 33%;
+  
+  
+}
+            img{
+                border-radius: 50%;
+                
+                transform: translate(-280%,150%);
+                
+                opacity:0.8;
+                
+            }
+           
+            footer {
+                background-color: black;
+                color:white;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+}
+.animate-charcter
+{
+   
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 80px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+        </style>
     </head>
-    <body class="">
-        <div class="main-wrapper">
-
-            <div class="">
-                <div class="row">
- <h1 align="center">Student Result Management System</h1>
-                    <div class="col-lg-6 visible-lg-block">
-
-<section class="section">
-                            <div class="row mt-40">
-                                <div class="col-md-10 col-md-offset-1 pt-50">
-
-                                    <div class="row mt-30 ">
-                                        <div class="col-md-11">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <div class="panel-title text-center">
-                                                        <h4>For Students</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="panel-body p-20">
-
-                                                    <div class="section-title">
-                                                        <p class="sub-title">Student Result Management System</p>
-                                                    </div>
-
-                                                    <form class="form-horizontal" method="post">
-                                                        <div class="form-group">
-                                                            <label for="inputEmail3" class="col-sm-6 control-label">Search your result</label>
-                                                            <div class="col-sm-6">
-                                                               <a href="find-result.php">click here</a>
-                                                            </div>
-                                                        </div>
-
-                                                    </form>
-
-
-
-
-                                                </div>
-                                            </div>
-                                            <!-- /.panel -->
-
-                                        </div>
-                                        <!-- /.col-md-11 -->
-                                    </div>
-                                    <!-- /.row -->
-                                </div>
-                                <!-- /.col-md-12 -->
-                            </div>
-                            <!-- /.row -->
-                        </section>
-                    </div>
-                    <div class="col-lg-6">
-                        <section class="section">
-                            <div class="row mt-40">
-                                <div class="col-md-10 col-md-offset-1 pt-50">
-
-                                    <div class="row mt-30 ">
-                                        <div class="col-md-11">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <div class="panel-title text-center">
-                                                        <h4>Admin Login</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="panel-body p-20">
-
-                                                    <div class="section-title">
-                                                        <p class="sub-title">Student Result Management System</p>
-                                                    </div>
-
-                                                    <form class="form-horizontal" method="post">
-                                                    	<div class="form-group">
-                                                    		<label for="inputEmail3" class="col-sm-2 control-label">Username</label>
-                                                    		<div class="col-sm-10">
-                                                    			<input type="text" name="username" class="form-control" id="inputEmail3" placeholder="UserName">
-                                                    		</div>
-                                                    	</div>
-                                                    	<div class="form-group">
-                                                    		<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                                                    		<div class="col-sm-10">
-                                                    			<input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                                    		</div>
-                                                    	</div>
-
-                                                        <div class="form-group mt-20">
-                                                    		<div class="col-sm-offset-2 col-sm-10">
-
-                                                    			<button type="submit" name="login" class="btn btn-success btn-labeled pull-right">Sign in<span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
-                                                    		</div>
-                                                    	</div>
-                                                    </form>
-
-
-
-
-                                                </div>
-                                            </div>
-                                            <!-- /.panel -->
-                                            <p class="text-muted text-center"><small>Copyright © 2020 SRMS  </a></small> </p>
-                                        </div>
-                                        <!-- /.col-md-11 -->
-                                    </div>
-                                    <!-- /.row -->
-                                </div>
-                                <!-- /.col-md-12 -->
-                            </div>
-                            <!-- /.row -->
-                        </section>
-
-                    </div>
-                    <!-- /.col-md-6 -->
-                </div>
-                <!-- /.row -->
+    <body>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h3 class="animate-charcter">Result Management Sytem</h3>
+              </div>
             </div>
-            <!-- /. -->
+          </div>
+        <img src="student.png" height="30%" width="15%" onClick="document.location.href='find-result.php'">
+        <img src="admin.png" height="30%" width="15%" onClick="document.location.href='login.php'" >
+        <div class="centered"><h2> students &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp admin</h2></div>
 
-        </div>
-        <!-- /.main-wrapper -->
-
-        <!-- ========== COMMON JS FILES ========== -->
-        <script src="js/jquery/jquery-2.2.4.min.js"></script>
-        <script src="js/jquery-ui/jquery-ui.min.js"></script>
-        <script src="js/bootstrap/bootstrap.min.js"></script>
-        <script src="js/pace/pace.min.js"></script>
-        <script src="js/lobipanel/lobipanel.min.js"></script>
-        <script src="js/iscroll/iscroll.js"></script>
-
-        <!-- ========== PAGE JS FILES ========== -->
-
-        <!-- ========== THEME JS ========== -->
-        <script src="js/main.js"></script>
-        <script>
-            $(function(){
-
-            });
-        </script>
-
-        <!-- ========== ADD custom.js FILE BELOW WITH YOUR CHANGES ========== -->
+  <footer>
+    
+    <center><h3>Copyright &copy; 2022 by result management system.</h3></center>    
+    
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>

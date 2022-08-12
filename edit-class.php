@@ -37,6 +37,14 @@ $msg="Data has been updated successfully";
         <link rel="stylesheet" href="css/prism/prism.css" media="screen" > <!-- USED FOR DEMO HELP - YOU CAN REMOVE IT -->
         <link rel="stylesheet" href="css/main.css" media="screen" >
         <script src="js/modernizr/modernizr.min.js"></script>
+        <style>
+            .body{
+    background: -moz-linear-gradient(-45deg, #632c65 15%, #56a5e2 100%);
+background: -webkit-linear-gradient(-45deg, #632c65 15%,#56a5e2 100%);
+background: linear-gradient(135deg, #632c65 15%,#56a5e2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#632c65', endColorstr='#56a5e2',GradientType=1 );
+}
+            </style>
     </head>
     <body class="top-navbar-fixed">
         <div class="main-wrapper">
@@ -114,25 +122,26 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {   ?>
 
-                                                    <div class="form-group has-success">
-                                                        <label for="success" class="control-label">Class Name</label>
-                                                		<div class="">
-                                                			<input type="text" name="classname" value="<?php echo htmlentities($result->ClassName);?>" required="required" class="form-control" id="success">
-                                                            <span class="help-block">Eg- Third, Fouth,Sixth etc</span>
-                                                		</div>
-                                                	</div>
-                                                       <div class="form-group has-success">
-                                                        <label for="success" class="control-label">Class Name in Numeric</label>
+<div class="form-group has-success">
+                                                        <label for="success" class="control-label">Year</label>
                                                         <div class="">
                                                             <input type="number" name="classnamenumeric" value="<?php echo htmlentities($result->ClassNameNumeric);?>" required="required" class="form-control" id="success">
-                                                            <span class="help-block">Eg- 1,2,4,5 etc</span>
+                                                           
                                                         </div>
                                                     </div>
+                                                    <div class="form-group has-success">
+                                                        <label for="success" class="control-label">Branch</label>
+                                                		<div class="">
+                                                			<input type="text" name="classname" value="<?php echo htmlentities($result->ClassName);?>" required="required" class="form-control" id="success">
+                                                           
+                                                		</div>
+                                                	</div>
+                                                       
                                                      <div class="form-group has-success">
                                                         <label for="success" class="control-label">Section</label>
                                                         <div class="">
                                                             <input type="text" name="section" value="<?php echo htmlentities($result->Section);?>" class="form-control" required="required" id="success">
-                                                            <span class="help-block">Eg- A,B,C etc</span>
+                                                         
                                                         </div>
                                                     </div>
                                                     <?php }} ?>

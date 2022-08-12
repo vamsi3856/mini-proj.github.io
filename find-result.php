@@ -14,13 +14,22 @@ include('includes/config.php');?><!DOCTYPE html>
         <link rel="stylesheet" href="css/icheck/skins/flat/blue.css" >
         <link rel="stylesheet" href="css/main.css" media="screen" >
         <script src="js/modernizr/modernizr.min.js"></script>
+        <style>
+            .vamsi{
+    background: -moz-linear-gradient(-45deg, #632c65 15%, #56a5e2 100%);
+background: -webkit-linear-gradient(-45deg, #632c65 15%,#56a5e2 100%);
+background: linear-gradient(135deg, #632c65 15%,#56a5e2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#632c65', endColorstr='#56a5e2',GradientType=1 );
+}
+            </style>
     </head>
-    <body class="">
+    <body class="vamsi">
         <div class="main-wrapper">
-
-            <div class="login-bg-color bg-black-300">
+        
+            <div class="login-bg-color vamsi">
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
+                    <div data-aos="fade-top"  data-aos-duration="1500">
                         <div class="panel login-box">
                             <div class="panel-heading">
                                 <div class="panel-title text-center">
@@ -30,7 +39,7 @@ include('includes/config.php');?><!DOCTYPE html>
                             <div class="panel-body p-20">
 
                            
-
+                               
                                 <form action="result.php" method="post">
                                 	<div class="form-group">
                                 		<label for="rollid">Enter your Roll Id</label>
@@ -71,8 +80,9 @@ foreach($results as $result)
 
                             </div>
                         </div>
+</div>
                         <!-- /.panel -->
-                        <p class="text-muted text-center"><small>Copyright © 2020 SRMS</small></p>
+                        <p class="text-muted text-center"><small>Copyright © 2022 SRMS</small></p>
                     </div>
                     <!-- /.col-md-6 col-md-offset-3 -->
                 </div>

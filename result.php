@@ -17,10 +17,18 @@ include('includes/config.php');
         <link rel="stylesheet" href="css/prism/prism.css" media="screen" >
         <link rel="stylesheet" href="css/main.css" media="screen" >
         <script src="js/modernizr/modernizr.min.js"></script>
+        <style>
+            .vamsi{
+                background: -moz-linear-gradient(-45deg, #632c65 15%, #56a5e2 100%);
+background: -webkit-linear-gradient(-45deg, #632c65 15%,#56a5e2 100%);
+background: linear-gradient(135deg, #632c65 15%,#56a5e2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#632c65', endColorstr='#56a5e2',GradientType=1 );
+            }
+            </style>
     </head>
     <body>
         <div class="main-wrapper">
-            <div class="content-wrapper">
+            <div class="content-wrapper vamsi">
                 <div class="content-container">
 
          
@@ -131,7 +139,8 @@ $cnt++;}
                                                              </tr>
 <tr>
                                                 <th scope="row" colspan="2">Download Result</th>           
-                                                            <td><b><a href="download-result.php">Download </a> </b></td>
+                                                            <!-- <td><b><a href="download-result.php">Download </a> </b></td> -->
+                                                            <td><b><button onclick="window.print()">Download</button</b></td>
                                                              </tr>
 
  <?php } else { ?>     
@@ -145,7 +154,7 @@ $cnt++;}
  {?>
 
 <div class="alert alert-danger left-icon-alert" role="alert">
-strong>Oh snap!</strong>
+<strong>Oh snap!</strong>
 <?php
 echo htmlentities("Invalid Roll Id");
  }
@@ -166,7 +175,7 @@ echo htmlentities("Invalid Roll Id");
                                     <div class="form-group">
                                                            
                                                             <div class="col-sm-6">
-                                                               <a href="index.php">Back to Home</a>
+                                                               <a class="color-black" href="index.php">Back to Home</a>
                                                             </div>
                                                         </div>
 

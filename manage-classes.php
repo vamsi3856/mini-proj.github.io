@@ -33,6 +33,12 @@ if(strlen($_SESSION['alogin'])=="")
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
+.vamsi{
+    background: -moz-linear-gradient(-45deg, #632c65 15%, #56a5e2 100%);
+background: -webkit-linear-gradient(-45deg, #632c65 15%,#56a5e2 100%);
+background: linear-gradient(135deg, #632c65 15%,#56a5e2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#632c65', endColorstr='#56a5e2',GradientType=1 );
+}
 .succWrap{
     padding: 10px;
     margin: 0 0 20px 0;
@@ -49,11 +55,13 @@ if(strlen($_SESSION['alogin'])=="")
             <!-- ========== TOP NAVBAR ========== -->
    <?php include('includes/topbar.php');?> 
             <!-- ========== WRAPPER FOR BOTH SIDEBARS & MAIN CONTENT ========== -->
+            <div class="vamsi">
             <div class="content-wrapper">
                 <div class="content-container">
 <?php include('includes/leftbar.php');?>  
 
                     <div class="main-page">
+                    
                         <div class="container-fluid">
                             <div class="row page-title-div">
                                 <div class="col-md-6">
@@ -107,8 +115,8 @@ else if($error){?>
                                                     <thead>
                                                         <tr>
                                                             <th>#</th>
-                                                            <th>Class Name</th>
-                                                            <th>Class Name Numeric</th>
+                                                            <th>Branch</th>
+                                                            <th>Year</th>
                                                             <th>Section</th>
                                                             <th>Creation Date</th>
                                                             <th>Action</th>
@@ -117,8 +125,8 @@ else if($error){?>
                                                     <tfoot>
                                                         <tr>
                                                           <th>#</th>
-                                                            <th>Class Name</th>
-                                                            <th>Class Name Numeric</th>
+                                                            <th>Branch</th>
+                                                            <th>Year</th>
                                                             <th>Section</th>
                                                             <th>Creation Date</th>
                                                             <th>Action</th>
@@ -184,7 +192,7 @@ foreach($results as $result)
                 <!-- /.content-container -->
             </div>
             <!-- /.content-wrapper -->
-
+</div>
         </div>
         <!-- /.main-wrapper -->
 

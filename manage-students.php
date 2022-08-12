@@ -34,6 +34,12 @@ if(strlen($_SESSION['alogin'])=="")
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
+.vamsi{
+    background: -moz-linear-gradient(-45deg, #632c65 15%, #56a5e2 100%);
+background: -webkit-linear-gradient(-45deg, #632c65 15%,#56a5e2 100%);
+background: linear-gradient(135deg, #632c65 15%,#56a5e2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#632c65', endColorstr='#56a5e2',GradientType=1 );
+}
 .succWrap{
     padding: 10px;
     margin: 0 0 20px 0;
@@ -45,12 +51,14 @@ if(strlen($_SESSION['alogin'])=="")
         </style>
     </head>
     <body class="top-navbar-fixed">
-        <div class="main-wrapper">
+        <div class="main-wrapper">  
 
             <!-- ========== TOP NAVBAR ========== -->
    <?php include('includes/topbar.php');?> 
             <!-- ========== WRAPPER FOR BOTH SIDEBARS & MAIN CONTENT ========== -->
-            <div class="content-wrapper">
+            
+            <div class="content-wrapper vamsi">
+            
                 <div class="content-container">
 <?php include('includes/leftbar.php');?>  
 

@@ -45,6 +45,14 @@ $error="Something went wrong. Please try again";
         <link rel="stylesheet" href="css/select2/select2.min.css" >
         <link rel="stylesheet" href="css/main.css" media="screen" >
         <script src="js/modernizr/modernizr.min.js"></script>
+        <style>
+            .vamsi{
+    background: -moz-linear-gradient(-45deg, #632c65 15%, #56a5e2 100%);
+background: -webkit-linear-gradient(-45deg, #632c65 15%,#56a5e2 100%);
+background: linear-gradient(135deg, #632c65 15%,#56a5e2 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#632c65', endColorstr='#56a5e2',GradientType=1 );
+}
+            </style>
     </head>
     <body class="top-navbar-fixed">
         <div class="main-wrapper">
@@ -52,7 +60,7 @@ $error="Something went wrong. Please try again";
             <!-- ========== TOP NAVBAR ========== -->
   <?php include('includes/topbar.php');?> 
             <!-- ========== WRAPPER FOR BOTH SIDEBARS & MAIN CONTENT ========== -->
-            <div class="content-wrapper">
+            <div class="content-wrapper vamsi">
                 <div class="content-container">
 
                     <!-- ========== LEFT SIDEBAR ========== -->
@@ -87,7 +95,7 @@ $error="Something went wrong. Please try again";
                            
                         <div class="row">
                                     <div class="col-md-12">
-                                        <div class="panel">
+                                        <div class="panel mt-10">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
                                                     <h5>Add Subject Combination</h5>
